@@ -14,9 +14,9 @@ variable "file" {
 
 variable "output_floader" {
   description = "where file has been downloaded"
+  default     = "/tmp"
 }
 
 variable "tag" {
   description = "tag for download"
-  default     = "/tmp"
 }
