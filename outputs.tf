@@ -1,7 +1,7 @@
 output "file_path" {
-  value = "${data.external.download.result.path}"
+  value = "${var.output_floader}/${var.file}"
 }
 
 output "md5" {
-  value = "${filemd5(data.external.download.result.path)}"
+  value = "${filemd5("${var.output_floader}/${var.file}")}"
 }
