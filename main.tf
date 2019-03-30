@@ -6,6 +6,9 @@ data "http" "example" {
     "Accept"        = "application/vnd.github.v3.raw"
     "Authorization" = "token ${var.token}"
   }
+  replace_on_change { 
+	  tag = "${var.tag}"
+  }
 }
 
 data "external" "asset_id" {
