@@ -13,5 +13,5 @@ data "external" "asset_id" {
 }
 
 data "external" "download" {
-  program = ["python", "-c", "import requests, json; path = '${var.output_floader}/${var.file}'; url = 'https://${var.token}:@api.github.com/repos/${var.repo}/releases/assets/${data.external.example.result.id}'; r = requests.get(url, headers={'Accept': 'application/octet-stream'}); open(path, 'wb').write(r.content); print json.dumps({'status' : str(r.status_code), 'path': path})"]
+  program = ["python", "-c", "import requests, json; path = '${var.output_floader}/${var.file}'; url = 'https://${var.token}:@api.github.com/repos/${var.repo}/releases/assets/${data.external.asset_id.result.id}'; r = requests.get(url, headers={'Accept': 'application/octet-stream'}); open(path, 'wb').write(r.content); print json.dumps({'status' : str(r.status_code), 'path': path})"]
 }
