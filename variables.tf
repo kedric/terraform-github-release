@@ -11,6 +11,10 @@ variable "repo" {
 variable "file" {
   description = "file needed for download"
 }
+variable "outfile" {
+  description = "file needed for download"
+  default     = "${var.file}"
+}
 
 variable "output_floader" {
   description = "where file has been downloaded"
