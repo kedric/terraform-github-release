@@ -13,7 +13,6 @@ variable "file" {
 }
 variable "outfile" {
   description = "file needed for download"
-  default     = "${var.file}"
 }
 
 variable "output_floader" {
