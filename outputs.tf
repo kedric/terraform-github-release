@@ -3,5 +3,6 @@ output "file_path" {
 }
 
 output "hash" {
-  value = "${base64sha256(file("${var.output_floader}/${var.file}"))}"
+  value = "${base64sha256(file("${data.external.download.result.path}"))}"
+  #   depends_on = ["data.external.download"]
 }

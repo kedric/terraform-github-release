@@ -9,7 +9,7 @@ data "http" "example" {
 }
 
 data "external" "asset_id" {
-  program = ["python", "-c", "import sys, json; print json.dumps({'id': str(json.loads('${data.http.example.body}')[\"assets\"][0]['id'])})"]
+  program = ["python", "-c", "import sys, json; print json.dumps({'id': str(filter(lambda x: x['name'] == '${var.file}',json.loads(body)['assets'])[0]['id'])})"]
 }
 
 data "external" "download" {
